@@ -35,7 +35,7 @@ public class Metronome extends StatusMove {
 
     @Override
     protected String describe() {
-        return "uses Metronome and chooses randomly" + MOVES[randomMoveIndex];
+        return "uses Metronome and chooses randomly " + MOVES[randomMoveIndex];
     }
 
 }
