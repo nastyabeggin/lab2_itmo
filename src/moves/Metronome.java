@@ -6,20 +6,6 @@ import java.util.Random;
 
 
 public class Metronome extends StatusMove {
-    private int randomMoveIndex;
-    private static final String[] MOVES = new String[]{
-            "Fly",
-            "Frustration",
-            "Headbutt",
-            "HiddenPower",
-            "LeechSeed",
-            "MegaDrain",
-            "Pursuit",
-            "RockThrow",
-            "Snore",
-            "TakeDown",
-            "TeeterDance"
-    };
 
     public Metronome() {
         super(Type.NORMAL, 0, 100);
@@ -27,15 +13,13 @@ public class Metronome extends StatusMove {
 
     @Override
     protected void applySelfEffects(Pokemon p) {
-        Random generator = new Random();
-        randomMoveIndex = generator.nextInt(MOVES.length);
-
-        // how to change the next move?? getPreparedMove() setMove() don't work
+        p.prepareMove();
+        // problem solved
     }
 
     @Override
     protected String describe() {
-        return "uses Metronome and chooses randomly " + MOVES[randomMoveIndex];
+        return "uses Metronome and chooses attack randomly";
     }
 
 }
